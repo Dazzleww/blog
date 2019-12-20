@@ -1,8 +1,8 @@
 from django.contrib import admin
-
-# Register your models here.
 from article.models import Article, Comment
-class CommentModelAdmin(admin.ModelAdmin):
+
+
+class CommentAdmin(admin.ModelAdmin):
     list_display = ['article', 'content', 'pubDateTime']
     list_display_links = ['article']
     list_filter = ['article', 'content']
@@ -12,5 +12,6 @@ class CommentModelAdmin(admin.ModelAdmin):
     class Meta:
         model = Comment
 
+
 admin.site.register(Article)
-admin.site.register(Comment, CommentModelAdmin)
+admin.site.register(Comment, CommentAdmin)

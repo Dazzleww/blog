@@ -8,6 +8,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
     class Meta:
         ordering = ['-pubDateTime']
 
@@ -19,5 +20,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.article.title + '-' + str(self.id)
+
     class Meta:
         ordering = ['pubDateTime']
